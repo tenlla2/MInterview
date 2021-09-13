@@ -288,7 +288,7 @@ export default {
       if (this.pageQuotes == this.preloadPageNumber) {
         this.dataColumnsQuote = this.preload;
         await this.preloadPage();
-      } else if (this.pageQuotes < this.preloadPageNumber) {
+      } else if (this.pageQuotes < this.preloadPageNumber || this.pageQuotes > this.preloadPageNumber) {
         this.loadingQuotes = true;
         this.dataColumnsQuote = [];
         await this.getDataApi("quote", "?page=" + this.pageQuotes);
