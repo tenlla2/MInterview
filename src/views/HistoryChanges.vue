@@ -6,6 +6,7 @@
           Historial de peticiones
         </h1>
         <table-component
+          v-if="showIf()"
           :loading="loading"
           :tableName="'Historial'"
           :dataColumns="items"
@@ -15,6 +16,7 @@
           v-on:showColumns="showColumns"
           :id="'tableHisoty'"
         />
+        <v-card></v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -58,7 +60,6 @@ export default {
       this.loading = true;
       this.items = JSON.parse(localStorage.getItem("changes"));
       this.loading = false;
-      console.log(this.items);
     },
     hideColumn(event) {
       this.isHideColumn = true;
@@ -66,6 +67,13 @@ export default {
         return row.value !== event;
       });
       this.isHideColumn = true;
+    },
+    showIf() {
+      if ( this.items != null) {
+        return true;
+      } else {
+        return false;
+      }
     },
     showColumns() {
       this.isHideColumn = false;

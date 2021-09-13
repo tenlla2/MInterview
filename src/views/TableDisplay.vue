@@ -283,8 +283,6 @@ export default {
     },
     async updateCurrentPageQuotes(event) {
       this.pageQuotes = event;
-      console.log("x:" + this.pageQuotes, "y:" + this.preloadPageNumber);
-
       if (this.pageQuotes == this.preloadPageNumber) {
         this.dataColumnsQuote = this.preload;
         await this.preloadPage();
@@ -318,12 +316,6 @@ export default {
         this.preload = response.data.docs;
         this.isPreload = true;
         this.preloadPageNumber = response.data.page;
-        console.log(
-          "inside : ",
-          this.preload,
-          this.pageQuotes,
-          this.preloadPageNumber
-        );
       }
 
       // this.preload =
