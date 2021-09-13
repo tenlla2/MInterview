@@ -40,6 +40,7 @@ export default new Vuex.Store({
       let secondConcat = firstConcat.concat(thirdPage.data.docs);
       commit("setTotalQuotes", secondConcat);
     },
+    // eslint-disable-next-line no-empty-pattern
     async getData({}, endPoint) {
       return await axiosInstance
         .get("/api/" + endPoint.url)
