@@ -59,8 +59,8 @@
           </template>
         </v-combobox>
       </v-col>
-      <v-col cols="12" md="4">
-        <v-btn @click="resetFilters()"> Resetear </v-btn>
+      <v-col cols="12" md="4" class="mb-5 mb-md-0">
+        <v-btn block @click="resetFilters()"> Resetear </v-btn>
       </v-col>
     </v-row>
     <v-row align="center" v-if="activeFilterQuote">
@@ -89,8 +89,8 @@
           </template>
         </v-combobox>
       </v-col>
-      <v-col cols="12" md="4">
-        <v-btn @click="resetFilterMovie()"> Resetear </v-btn>
+      <v-col cols="12" class="mb-5 mb-md-0" md="4">
+        <v-btn block @click="resetFilterMovie()"> Resetear </v-btn>
       </v-col>
     </v-row>
     <v-card elevation="10">
@@ -137,7 +137,7 @@
             >
               mdi-eye
             </v-icon>
-            <v-btn @click="resizeColumn">Activar columnas resizables</v-btn>
+            <v-btn class="d-none d-lg-inline-block" @click="resizeColumn">Activar columnas resizables</v-btn>
           </v-toolbar></template
         >
         <template v-for="header in headers" v-slot:[`header.${header.value}`]>
