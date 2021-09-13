@@ -6,6 +6,7 @@ const axiosInstance = axios.create({
   headers: {
     "Access-Control-Allow-Origin": "*",
     Authorization: "Bearer _IvjLIFpI4EJrEtXUhho",
+    crossdomain: true 
   },
 });
 
@@ -43,7 +44,7 @@ export default new Vuex.Store({
     // eslint-disable-next-line no-empty-pattern
     async getData({}, endPoint) {
       return await axiosInstance
-        .get("/api/" + endPoint.url)
+        .get("https://the-one-api.dev/v2/" + endPoint.url)
         .then((response) => {
           return response;
         })
